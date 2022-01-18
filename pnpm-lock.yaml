@@ -10,11 +10,14 @@ specifiers:
   '@remix-run/vercel': ^1.1.1
   '@types/react': ^17.0.24
   '@types/react-dom': ^17.0.9
+  '@types/uuid': ^8.3.4
   framer-motion: ^5
   react: ^17.0.2
   react-dom: ^17.0.2
   remix: ^1.1.1
   typescript: ^4.1.2
+  uuid: ^8.3.2
+  zustand: ^3.6.9
 
 dependencies:
   '@chakra-ui/react': 1.7.4_22baa6f5acaf9d65b412ab335954e6a6
@@ -27,11 +30,14 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   remix: 1.1.1
+  uuid: 8.3.2
+  zustand: 3.6.9_react@17.0.2
 
 devDependencies:
   '@remix-run/dev': 1.1.1
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
+  '@types/uuid': 8.3.4
   typescript: 4.5.4
 
 packages:
@@ -1336,6 +1342,10 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
+
+  /@types/uuid/8.3.4:
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
     dev: true
 
   /@types/warning/3.0.0:
@@ -4379,6 +4389,11 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
+
   /uvu/0.5.3:
     resolution: {integrity: sha512-brFwqA3FXzilmtnIyJ+CxdkInkY/i4ErvP7uV0DnUVxQcQ55reuHphorpF+tZoVHK2MniZ/VJzI7zJQoc9T9Yw==}
     engines: {node: '>=8'}
@@ -4533,6 +4548,18 @@ packages:
       camelcase: 5.3.1
       decamelize: 1.2.0
     dev: true
+
+  /zustand/3.6.9_react@17.0.2:
+    resolution: {integrity: sha512-OvDNu/jEWpRnEC7k8xh8GKjqYog7td6FZrLMuHs/IeI8WhrCwV+FngVuwMIFhp5kysZXr6emaeReMqjLGaldAQ==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      react: '>=16.8'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
