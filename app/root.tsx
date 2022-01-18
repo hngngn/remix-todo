@@ -1,32 +1,18 @@
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration
-} from "remix";
-import type { MetaFunction } from "remix";
+import { ChakraProvider } from '@chakra-ui/react'
+import type { MetaFunction } from 'remix'
+import { Outlet } from 'remix'
+import Document from './components/document'
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
-};
+    return { title: 'Todo | Remix', description: 'TodoApp built with Remix' }
+}
 
 export default function App() {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
-      </body>
-    </html>
-  );
+    return (
+        <Document>
+            <ChakraProvider>
+                <Outlet />
+            </ChakraProvider>
+        </Document>
+    )
 }
