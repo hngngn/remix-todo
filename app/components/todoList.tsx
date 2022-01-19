@@ -1,5 +1,6 @@
 import { HStack, Icon, IconButton, Input, Stack, Text, VStack } from '@chakra-ui/react'
-import { useRef, useState } from 'react'
+import moment from 'moment'
+import { useState } from 'react'
 import { IoAddCircle, IoTrashBin } from 'react-icons/io5'
 import { v4 as uuidv4 } from 'uuid'
 import { useTodoStore } from '~/store/useTodoStore'
@@ -8,15 +9,18 @@ import ListComponent from './list'
 const TodoList = () => {
     const [newTodoValue, setNewTodoValue] = useState('')
     const { addTodo, removeAll, todos } = useTodoStore()
-    const inputRef = useRef<HTMLInputElement>(null)
+
+    const date = moment().format('MMM Do YY')
+    const AddTodo = () => {
+        return addTodo({ id: uuidv4(), title: newTodoValue, complete: false, createdOn: date }), setNewTodoValue('')
+    }
 
     const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.code === 'Enter')
-            return addTodo({ id: uuidv4(), title: newTodoValue, complete: false }), setNewTodoValue('')
+        if (event.code === 'Enter') return AddTodo()
     }
 
     const addNewTodo = () => {
-        return addTodo({ id: uuidv4(), title: newTodoValue, complete: false }), setNewTodoValue('')
+        return AddTodo()
     }
 
     return (
@@ -34,7 +38,6 @@ const TodoList = () => {
                         placeholder="Add a todo"
                         value={newTodoValue}
                         onInput={(e) => setNewTodoValue(e.currentTarget.value)}
-                        ref={inputRef}
                     />
                     <IconButton
                         onClick={addNewTodo}

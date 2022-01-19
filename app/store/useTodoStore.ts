@@ -3,10 +3,10 @@ import { persist, StoreApiWithPersist } from 'zustand/middleware'
 
 interface TodoState {
     todos: Todo[]
-    addTodo: (todo: Todo) => void
-    removeTodo: (todo: Todo) => void
-    removeAll: () => void
-    isCompleted: (todo: Todo) => void
+    addTodo: TodoCRUD
+    removeTodo: TodoCRUD
+    removeAll(): void
+    isCompleted: TodoCRUD
 }
 
 export const useTodoStore = create(
