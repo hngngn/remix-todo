@@ -3,6 +3,7 @@ type Todo = {
     title: string | null
     complete: boolean
     createdOn: string
+    completedOn?: string | boolean | null
 }
 
 type TodoCRUD = (todo: Todo) => void

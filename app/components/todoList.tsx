@@ -11,6 +11,7 @@ const TodoList = () => {
     const { addTodo, removeAll, todos } = useTodoStore()
 
     const date = moment().format('MMM Do YY')
+
     const AddTodo = () => {
         return addTodo({ id: uuidv4(), title: newTodoValue, complete: false, createdOn: date }), setNewTodoValue('')
     }

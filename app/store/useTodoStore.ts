@@ -1,3 +1,4 @@
+import moment from 'moment'
 import create, { GetState, SetState } from 'zustand'
 import { persist, StoreApiWithPersist } from 'zustand/middleware'
 
@@ -21,6 +22,7 @@ export const useTodoStore = create(
                     todos: state.todos.map((it) => ({
                         ...it,
                         complete: it.id === todo.id ? !todo.complete : it.complete,
+                        completedOn: !it.complete ? moment().format('MMM Do YY, h:mm:ss a') : null,
                     })),
                 })),
         }),
